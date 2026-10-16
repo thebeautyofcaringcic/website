@@ -19,20 +19,20 @@ npm run lint    # lint
 
 ## Domain and indexing
 
-The live domain is **https://thebeautyofcaringcic.com** (`PRODUCTION_URL` in `lib/site.ts`).
+The live domain is **https://www.thebeautyofcaringcic.com** (`PRODUCTION_URL` in `lib/site.ts`).
 
 | Deployment | URL used | Search engines |
 |---|---|---|
-| Vercel **production** | `https://thebeautyofcaringcic.com` | allowed; `robots.txt` points to the sitemap |
+| Vercel **production** | `https://www.thebeautyofcaringcic.com` | allowed; `robots.txt` points to the sitemap |
 | Vercel **preview**, local dev | `http://localhost:3000` | blocked (`Disallow: /` and `noindex`) |
 
 This is detected automatically from Vercel's `VERCEL_ENV`, so no environment variable is needed. To override the URL anywhere, set `NEXT_PUBLIC_SITE_URL` (see `.env.example`).
 
-In Vercel, add both `thebeautyofcaringcic.com` and `www.thebeautyofcaringcic.com` under **Settings → Domains**, and set `www` to redirect to the bare domain so there is one canonical address.
+In Vercel, add both `thebeautyofcaringcic.com` and `www.thebeautyofcaringcic.com` under **Settings → Domains**, and set the bare domain to redirect to `www` (the primary address) so there is one canonical address.
 
 ## Launch checklist
 
-1. Point `thebeautyofcaringcic.com` at Vercel.
+1. Point `www.thebeautyofcaringcic.com` (and the bare domain) at Vercel.
 2. Add the domain in Vercel (see above) and redeploy production.
 3. Check `https://<domain>/robots.txt` and `https://<domain>/sitemap.xml`.
 4. Check the structured data with the [Rich Results Test](https://search.google.com/test/rich-results) and the [Schema Markup Validator](https://validator.schema.org/).

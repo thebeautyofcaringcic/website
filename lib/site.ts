@@ -7,7 +7,7 @@
  * - Vercel production deployments use PRODUCTION_URL.
  * - Everything else (Vercel previews, local dev) uses localhost and is noindex.
  */
-export const PRODUCTION_URL = "https://thebeautyofcaringcic.com";
+export const PRODUCTION_URL = "https://www.thebeautyofcaringcic.com";
 
 // NEXT_PUBLIC_VERCEL_ENV is exposed to the browser by Vercel; VERCEL_ENV covers the server.
 const vercelEnv = process.env.NEXT_PUBLIC_VERCEL_ENV ?? process.env.VERCEL_ENV;
