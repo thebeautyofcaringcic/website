@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { DM_Sans, Josefin_Sans } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import JsonLd from "@/components/JsonLd";
 import WebMcpTools from "@/components/WebMcpTools";
 import { baseOpenGraph, isIndexable, siteConfig, siteUrl } from "@/lib/site";
@@ -65,6 +66,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <JsonLd data={siteJsonLd()} />
         {children}
         <WebMcpTools />
+        <Analytics />
       </body>
     </html>
   );
