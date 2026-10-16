@@ -34,7 +34,7 @@ export const siteConfig = {
   locality: "Bristol",
   region: "England",
   country: "GB",
-  foundingDate: "2021",
+  foundingDate: "2023",
   locale: "en_GB",
   language: "en-GB",
   founder: {

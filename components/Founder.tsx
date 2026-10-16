@@ -37,7 +37,7 @@ export default function Founder() {
             </span>
           </h2>
           <p style={{ margin: "0", maxWidth: "520px", fontSize: "18px", color: "#E9C9D8" }}>
-            {"Natacha qualified as a socio-aesthetician in Paris in 2012. She worked in oncology and Alzheimer's care, volunteered with the Singapore Cancer Society, and launched The Beauty of Caring CIC in 2021."}
+            {"Natacha qualified as a socio-aesthetician in Paris in 2012. She worked in oncology and Alzheimer's care, volunteered with the Singapore Cancer Society, and launched The Beauty of Caring CIC in 2023."}
           </p>
           <div style={{ display: "flex", flexDirection: "column", maxWidth: "560px", fontSize: "15px" }}>
             <div style={{ display: "flex", gap: "20px", padding: "14px 0", borderTop: "1px solid #6B4569" }}>
