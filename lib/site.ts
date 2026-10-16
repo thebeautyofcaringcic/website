@@ -2,10 +2,21 @@
  * Single source of truth for site-wide details used by metadata, the sitemap,
  * robots.txt and the JSON-LD structured data.
  *
- * Set NEXT_PUBLIC_SITE_URL (e.g. https://thebeautyofcaring.org.uk) once the
- * domain is live. Until it is set, the site tells search engines not to index it.
+ * Which URL the site uses, and whether search engines may index it:
+ * - NEXT_PUBLIC_SITE_URL, if set, always wins.
+ * - Vercel production deployments use PRODUCTION_URL.
+ * - Everything else (Vercel previews, local dev) uses localhost and is noindex.
  */
-const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/+$/, "");
+export const PRODUCTION_URL = "https://thebeautyofcaringcic.com";
+
+// NEXT_PUBLIC_VERCEL_ENV is exposed to the browser by Vercel; VERCEL_ENV covers the server.
+const vercelEnv = process.env.NEXT_PUBLIC_VERCEL_ENV ?? process.env.VERCEL_ENV;
+
+const configuredUrl = (
+  process.env.NEXT_PUBLIC_SITE_URL || (vercelEnv === "production" ? PRODUCTION_URL : "")
+)
+  .trim()
+  .replace(/\/+$/, "");
 
 export const siteUrl = configuredUrl || "http://localhost:3000";
 

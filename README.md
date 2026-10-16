@@ -17,28 +17,23 @@ npm run start   # serve the production build
 npm run lint    # lint
 ```
 
-## Going live: the one setting to change
+## Domain and indexing
 
-All SEO output depends on one environment variable:
+The live domain is **https://thebeautyofcaringcic.com** (`PRODUCTION_URL` in `lib/site.ts`).
 
-```
-NEXT_PUBLIC_SITE_URL=https://www.your-domain.org.uk
-```
-
-Set it in the hosting provider's environment variables (and in `.env.local` locally if needed; see `.env.example`). No trailing slash.
-
-| | Without it (previews, staging) | With it (live) |
+| Deployment | URL used | Search engines |
 |---|---|---|
-| `robots.txt` | blocks all crawlers | allows all, points to the sitemap |
-| `<meta name="robots">` | `noindex, nofollow` | `index, follow` |
-| Canonical, Open Graph and JSON-LD URLs | `http://localhost:3000` | the live domain |
+| Vercel **production** | `https://thebeautyofcaringcic.com` | allowed; `robots.txt` points to the sitemap |
+| Vercel **preview**, local dev | `http://localhost:3000` | blocked (`Disallow: /` and `noindex`) |
 
-This means a preview deployment can never be indexed by accident.
+This is detected automatically from Vercel's `VERCEL_ENV`, so no environment variable is needed. To override the URL anywhere, set `NEXT_PUBLIC_SITE_URL` (see `.env.example`).
+
+In Vercel, add both `thebeautyofcaringcic.com` and `www.thebeautyofcaringcic.com` under **Settings → Domains**, and set `www` to redirect to the bare domain so there is one canonical address.
 
 ## Launch checklist
 
-1. Buy the domain and point it at the host.
-2. Set `NEXT_PUBLIC_SITE_URL` in the host's **production** environment only, then redeploy.
+1. Point `thebeautyofcaringcic.com` at Vercel.
+2. Add the domain in Vercel (see above) and redeploy production.
 3. Check `https://<domain>/robots.txt` and `https://<domain>/sitemap.xml`.
 4. Check the structured data with the [Rich Results Test](https://search.google.com/test/rich-results) and the [Schema Markup Validator](https://validator.schema.org/).
 5. Add the domain to [Google Search Console](https://search.google.com/search-console). Use the DNS method, or paste the HTML-tag code into `verification` in `app/layout.tsx`.
