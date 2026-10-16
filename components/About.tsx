@@ -22,7 +22,7 @@ export default function About() {
                 {"Founded"}
               </span>
               <span style={{ fontSize: "30px", letterSpacing: "0.06em", fontWeight: "300" }}>
-                {"2021"}
+                {"2023"}
               </span>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
