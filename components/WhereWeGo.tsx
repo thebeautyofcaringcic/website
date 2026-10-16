@@ -35,7 +35,7 @@ export default function WhereWeGo() {
               {"Charities"}
             </span>
             <span style={{ padding: "16px 22px 12px", borderRadius: "999px", background: "#FBD5E1" }}>
-              {"Skills agencies"}
+              {"Corporate"}
             </span>
           </div>
         </div>

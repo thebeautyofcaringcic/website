@@ -63,7 +63,7 @@ export const siteConfig = {
     "Homeless centres",
     "Prisons",
     "Charities",
-    "Skills agencies",
+    "Corporate",
   ],
   press: [
     {
